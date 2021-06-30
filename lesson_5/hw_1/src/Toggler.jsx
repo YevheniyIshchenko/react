@@ -7,7 +7,8 @@ class Toggler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: 'Off',
+      text: "Off",
+      clicked: false,
     };
     // this.setButtonText = this.setButtonText.bind(this);
   }
@@ -26,16 +27,26 @@ class Toggler extends React.Component {
     //     text: "Off",
     //   });
     // }
-    const btn = document.querySelector('.button');
-    btn.dataset.trigger === 'false' ? (this.setState({text: 'On',}), btn.dataset.trigger = 'true') : (this.setState({text: 'Off',}), btn.dataset.trigger = 'false')
+
+    this.state.clicked === false 
+
+    // const btn = document.querySelector(".button");
+    // btn.dataset.trigger === "false"
+    //   ? (this.setState({ text: "On" }), (btn.dataset.trigger = "true"))
+    //   : (this.setState({ text: "Off" }), (btn.dataset.trigger = "false"));
+
+
     // this.state.text === 'Off' ? this.setState({text: 'On',}) : this.setState({text: 'Off',})
-    
   };
 
   render() {
     return (
       <div className="toggler">
-        <button onClick={this.setButtonText} className="button" data-trigger="false">
+        <button
+          onClick={this.setButtonText}
+          className="button"
+          data-trigger="false"
+        >
           {this.state.text}
         </button>
       </div>
