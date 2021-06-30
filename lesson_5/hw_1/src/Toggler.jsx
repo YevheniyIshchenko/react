@@ -28,9 +28,11 @@ class Toggler extends React.Component {
 
   render() {
     return (
-      <button onClick={() => this.setButtonText()} className="button">
-        {this.state.text}
-      </button>
+      <div className="toggler">
+        <button onClick={() => this.setButtonText()} className="button">
+          {this.state.text}
+        </button>
+      </div>
     );
   }
 }
