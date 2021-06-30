@@ -2,7 +2,7 @@ import React from "react";
 
 // const ON = "On";
 // const OFF = "Off";
-let checked = false;
+
 class Toggler extends React.Component {
   constructor(props) {
     super(props);
@@ -40,7 +40,11 @@ class Toggler extends React.Component {
 
   render() {
     let text = this.state.checked ? "On" : "Off";
-    return <button onClick={this.setButtonText}>{text}</button>;
+    return (
+      <div className="toggler">
+        <button onClick={this.setButtonText}>{text}</button>
+      </div>
+    );
   }
 }
 
