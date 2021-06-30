@@ -41,9 +41,9 @@ class Toggler extends React.Component {
   render() {
     let text = this.state.checked ? "On" : "Off";
     return (
-      <div className="toggler">
-        <button onClick={this.setButtonText}>{text}</button>
-      </div>
+      // <div className="toggler">
+        <button className="toggler" onClick={this.setButtonText}>{text}</button>
+      // </div>
     );
   }
 }
