@@ -2,7 +2,7 @@ import React from "react";
 
 // const ON = "On";
 // const OFF = "Off";
-
+let checked = false;
 class Toggler extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +28,8 @@ class Toggler extends React.Component {
     //   });
     // }
 
-    this.state.clicked === false 
+    checked === false ? this.setState({text: 'On',}) : this.setState({text: 'Off',})
+    checked = !checked;
 
     // const btn = document.querySelector(".button");
     // btn.dataset.trigger === "false"
