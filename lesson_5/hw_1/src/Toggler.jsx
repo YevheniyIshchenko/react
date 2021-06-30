@@ -11,7 +11,7 @@ class Toggler extends React.Component {
     };
   }
 
-  setButtonText = () => {
+  setButtonText() {
     // this.setState({
     //   text: this.state.text === OFF ? ON : OFF,
     // });
@@ -24,7 +24,7 @@ class Toggler extends React.Component {
         text: "Off",
       });
     }
-  };
+  }
 
   render() {
     return (
