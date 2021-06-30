@@ -27,8 +27,8 @@ class Toggler extends React.Component {
     //     text: "Off",
     //   });
     // }
-    
-    this.setState({checked:!this.state.checked});
+
+    this.setState({ checked: !this.state.checked });
 
     // const btn = document.querySelector(".button");
     // btn.dataset.trigger === "false"
@@ -39,16 +39,8 @@ class Toggler extends React.Component {
   };
 
   render() {
-    let text = this.state.checked ? 'On' : 'Off';
-    return (
-      <button
-        onClick={this.setButtonText}
-        className="button"
-        data-trigger="false"
-      >
-        {text}
-      </button>
-    );
+    let text = this.state.checked ? "On" : "Off";
+    return <button onClick={this.setButtonText}>{text}</button>;
   }
 }
 
