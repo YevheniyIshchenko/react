@@ -9,23 +9,28 @@ class Toggler extends React.Component {
     this.state = {
       text: "Off",
     };
-    this.setButtonText = this.setButtonText.bind(this);
+    // this.setButtonText = this.setButtonText.bind(this);
   }
 
-  setButtonText() {
+  setButtonText = () => {
     // this.setState({
     //   text: this.state.text === OFF ? ON : OFF,
     // });
-    if (this.state.text === "Off") {
-      this.setState({
-        text: "On",
-      });
-    } else {
-      this.setState({
-        text: "Off",
-      });
-    }
-  }
+
+    // if (this.state.text === "Off") {
+    //   this.setState({
+    //     text: "On",
+    //   });
+    // } else {
+    //   this.setState({
+    //     text: "Off",
+    //   });
+    // }
+
+    
+    this.state.text === 'Off' ? this.setState({text: "On",}) : this.setState({text: "Off",})
+
+  };
 
   render() {
     return (
