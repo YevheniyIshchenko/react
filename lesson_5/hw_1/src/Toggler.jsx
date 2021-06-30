@@ -7,7 +7,7 @@ class Toggler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: 'Off',
+      // text: 'Off',
       checked: false,
     };
     this.setButtonText = this.setButtonText.bind(this);
@@ -39,14 +39,14 @@ class Toggler extends React.Component {
   };
 
   render() {
-    this.state.text = this.state.checked ? 'On' : 'Off';
+    let text = this.state.checked ? 'On' : 'Off';
     return (
       <button
         onClick={this.setButtonText}
         className="button"
         data-trigger="false"
       >
-        {this.state.text}
+        {text}
       </button>
     );
   }
