@@ -12,9 +12,18 @@ class Toggler extends React.Component {
   }
 
   setButtonText = () => {
-    this.setState({
-      text: this.state.text === OFF ? ON : OFF,
-    });
+    // this.setState({
+    //   text: this.state.text === OFF ? ON : OFF,
+    // });
+    if(this.state.text === OFF){
+        this.setState({
+            text: ON,
+        })
+    }else{
+        this.setState({
+            text: OFF,
+        })
+    }
   };
 
   render() {
@@ -29,3 +38,5 @@ class Toggler extends React.Component {
 }
 
 export default Toggler;
+
+
