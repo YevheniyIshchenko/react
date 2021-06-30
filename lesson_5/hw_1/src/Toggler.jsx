@@ -42,15 +42,13 @@ class Toggler extends React.Component {
 
   render() {
     return (
-      <div className="toggler">
-        <button
-          onClick={this.setButtonText}
-          className="button"
-          data-trigger="false"
-        >
-          {this.state.text}
-        </button>
-      </div>
+      <button
+        onClick={this.setButtonText}
+        className="button"
+        data-trigger="false"
+      >
+        {this.state.text}
+      </button>
     );
   }
 }
