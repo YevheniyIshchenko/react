@@ -8,6 +8,7 @@ class Toggler extends React.Component {
     super(props);
     this.state = {
       text: 'Off',
+      checked: false,
     };
     this.setButtonText = this.setButtonText.bind(this);
   }
@@ -26,11 +27,8 @@ class Toggler extends React.Component {
     //     text: "Off",
     //   });
     // }
-
-    checked === false
-      ? this.setState({ text: 'On' })
-      : this.setState({ text: 'Off' });
-    checked = !checked;
+    this.state.text = this.state.checked ? 'On' : 'Off';
+    this.setState({checked:!this.state.checked});
 
     // const btn = document.querySelector(".button");
     // btn.dataset.trigger === "false"
