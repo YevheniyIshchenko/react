@@ -26,16 +26,16 @@ class Toggler extends React.Component {
     //     text: "Off",
     //   });
     // }
-
+    const btn = document.querySelector('.button');
+    btn.dataset.trigger === 'false' ? (this.setState({text: 'On',}), btn.dataset.trigger = 'true') : (this.setState({text: 'Off',}), btn.dataset.trigger = 'false')
+    // this.state.text === 'Off' ? this.setState({text: 'On',}) : this.setState({text: 'Off',})
     
-    this.state.text === 'Off' ? this.setState({text: 'On',}) : this.setState({text: 'Off',})
-
   };
 
   render() {
     return (
       <div className="toggler">
-        <button onClick={this.setButtonText} className="button">
+        <button onClick={this.setButtonText} className="button" data-trigger="false">
           {this.state.text}
         </button>
       </div>
