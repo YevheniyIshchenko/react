@@ -8,7 +8,6 @@ class Toggler extends React.Component {
     super(props);
     this.state = {
       text: "Off",
-      clicked: false,
     };
     // this.setButtonText = this.setButtonText.bind(this);
   }
@@ -28,14 +27,15 @@ class Toggler extends React.Component {
     //   });
     // }
 
-    checked === false ? this.setState({text: 'On',}) : this.setState({text: 'Off',})
+    checked === false
+      ? this.setState({ text: "On" })
+      : this.setState({ text: "Off" });
     checked = !checked;
 
     // const btn = document.querySelector(".button");
     // btn.dataset.trigger === "false"
     //   ? (this.setState({ text: "On" }), (btn.dataset.trigger = "true"))
     //   : (this.setState({ text: "Off" }), (btn.dataset.trigger = "false"));
-
 
     // this.state.text === 'Off' ? this.setState({text: 'On',}) : this.setState({text: 'Off',})
   };
