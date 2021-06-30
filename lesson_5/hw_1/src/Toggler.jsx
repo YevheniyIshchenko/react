@@ -9,6 +9,7 @@ class Toggler extends React.Component {
     this.state = {
       text: "Off",
     };
+    this.setButtonText = this.setButtonText.bind(this);
   }
 
   setButtonText() {
