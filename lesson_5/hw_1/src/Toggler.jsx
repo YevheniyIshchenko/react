@@ -7,9 +7,9 @@ class Toggler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "Off",
+      text: 'Off',
     };
-    // this.setButtonText = this.setButtonText.bind(this);
+    this.setButtonText = this.setButtonText.bind(this);
   }
 
   setButtonText = () => {
@@ -28,7 +28,7 @@ class Toggler extends React.Component {
     // }
 
     
-    this.state.text === 'Off' ? this.setState({text: "On",}) : this.setState({text: "Off",})
+    this.state.text === 'Off' ? this.setState({text: 'On',}) : this.setState({text: 'Off',})
 
   };
 
