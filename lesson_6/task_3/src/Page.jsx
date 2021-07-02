@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Message from "./Message.jsx";
 
 const text1 = "Hello, world!";
 const text2 = "Another exciting text.";
 
-class Page extends Component {
+class Page extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
