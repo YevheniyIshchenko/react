@@ -19,9 +19,9 @@ class App extends React.Component {
     return (
       <>
         <button onClick={this.toggle}>Toggle</button>
-        <div>{this.state.visible && <Clock city="New York" offset={-5} />}</div>
-        <div>{this.state.visible && <Clock city="Kyiv" offset={2}/>}</div>
-        <div>{this.state.visible && <Clock city="London" offset={0}/>}</div>
+        <div>{this.state.visible && <Clock location="New York" offset={-5} />}</div>
+        <div>{this.state.visible && <Clock location="Kyiv" offset={2}/>}</div>
+        <div>{this.state.visible && <Clock location="London" offset={0}/>}</div>
       </>
     );
   }

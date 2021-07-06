@@ -24,7 +24,7 @@ class Clock extends React.Component {
   render() {
     return (
       <div className="clock">
-        <div className="clock__location">{this.props.city}</div>
+        <div className="clock__location">{this.props.location}</div>
         <div className="clock__time">
           {moment(moment(this.state.date).utcOffset(this.props.offset)).format("LTS")}
         </div>
