@@ -17,11 +17,13 @@ class UsersList extends React.Component {
 
   render() {
     const users = this.props.users
-      .filter((user) =>
-        user.name.toLowerCase().includes(this.state.value.toLowerCase())
+      .filter(
+        (user) =>
+          this.state.value !== "" ||
+          user.name.toLowerCase().includes(this.state.value.toLowerCase())
       )
       .map((el) => <User key={el.id} name={el.name} age={el.age} />);
-      console.log(users);
+    console.log(users);
 
     // const usersFilter =
     //   this.state.value !== ""
