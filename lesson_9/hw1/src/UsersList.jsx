@@ -16,13 +16,13 @@ class UsersList extends React.Component {
   };
 
   render() {
-    // const users = this.props.users;
-    // .filter(
-    //   (user) =>
-    //     this.state.value !== "" ||
-    //     user.name.toLowerCase().includes(this.state.value.toLowerCase())
-    // )
-    // .map((el) => <User key={el.id} name={el.name} age={el.age} />);
+    const users = this.props.users
+      .filter(
+        (user) =>
+          this.state.value !== "" ||
+          user.name.toLowerCase().includes(this.state.value.toLowerCase())
+      )
+      .map((el) => <User key={el.id} name={el.name} age={el.age} />);
 
     // const usersFilter =
     //   this.state.value !== ""
@@ -34,21 +34,11 @@ class UsersList extends React.Component {
       <>
         <Filter
           filtertext={this.state.value}
-          // count={users.lenght}
-          onSubmit={this.handleChange.bind(this)}
+          count={users.lenght}
+          onSubmit={this.handleChange}
         />
 
-        <ul className="users">
-          {this.props.users
-            .filter(
-              (user) =>
-                this.state.value !== "" ||
-                user.name.toLowerCase().includes(this.state.value.toLowerCase())
-            )
-            .map((el) => (
-              <User key={el.id} name={el.name} age={el.age} />
-            ))}
-        </ul>
+        <ul className="users">{users}</ul>
       </>
     );
   }
