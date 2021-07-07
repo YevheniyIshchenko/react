@@ -13,23 +13,26 @@ class UsersList extends React.Component {
   };
 
   render() {
-    const users = this.props.users;
-    const usersFilter =
-      this.state.value !== ""
-        ? users.filter((user) =>
-            user.name.toLowerCase().includes(this.state.value.toLowerCase())
-          )
-        : users;
+    const users = this.props.users.filter((user) =>
+      user.name.toLowerCase().includes(this.state.value.toLowerCase())
+    );
+
+    // const usersFilter =
+    //   this.state.value !== ""
+    //     ? users.filter((user) =>
+    //         user.name.toLowerCase().includes(this.state.value.toLowerCase())
+    //       )
+    //     : users;
     return (
       <>
         <Filter
           filtertext={this.state.value}
-          count={usersFilter.lenght}
+          count={users.lenght}
           onSubmit={this.handleChange}
         />
 
         <ul className="users">
-          {usersFilter.map((el) => (
+          {users.map((el) => (
             <User key={el.id} name={el.name} age={el.age} />
           ))}
         </ul>
