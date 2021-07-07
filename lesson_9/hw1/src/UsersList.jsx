@@ -30,12 +30,13 @@ class UsersList extends React.Component {
     //         user.name.toLowerCase().includes(this.state.value.toLowerCase())
     //       )
     //     : users;
+    
     return (
       <>
         <Filter
           filtertext={this.state.value}
           count={users.lenght}
-          onSubmit={this.handleChange}
+          onChange={this.handleChange}
         />
 
         <ul className="users">{users}</ul>
