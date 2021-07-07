@@ -7,8 +7,6 @@ class Search extends React.Component {
       (acc, [name, value]) => ({ ...acc, [name]: value }),
       {}
     );
-
-    console.log(formData);
   };
 
   setRef = (node) => {
@@ -20,7 +18,7 @@ class Search extends React.Component {
       <form
         ref={this.setRef}
         className="login-form"
-        onSubmit={() => this.props.onSubmit(this.state)}
+        onSubmit={() => this.props.onSubmit(this.handleSubmit())}
       >
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
