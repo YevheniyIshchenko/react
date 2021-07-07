@@ -3,9 +3,12 @@ import User from "./User.jsx";
 import Filter from "./Filter.jsx";
 
 class UsersList extends React.Component {
-  state = {
-    value: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "",
+    };
+  }
   handleChange = (event) => {
     this.setState({
       value: event.target.value,
@@ -13,9 +16,12 @@ class UsersList extends React.Component {
   };
 
   render() {
-    const users = this.props.users.filter((user) =>
-      user.name.toLowerCase().includes(this.state.value.toLowerCase())
-    );
+    const users = this.props.users
+      .filter((user) =>
+        user.name.toLowerCase().includes(this.state.value.toLowerCase())
+      )
+      .map((el) => <User key={el.id} name={el.name} age={el.age} />);
+      console.log(users);
 
     // const usersFilter =
     //   this.state.value !== ""
@@ -28,14 +34,10 @@ class UsersList extends React.Component {
         <Filter
           filtertext={this.state.value}
           count={users.lenght}
-          onSubmit={this.handleChange}
+          onSubmit={this.handleChange.bind(this)}
         />
 
-        <ul className="users">
-          {users.map((el) => (
-            <User key={el.id} name={el.name} age={el.age} />
-          ))}
-        </ul>
+        <ul className="users">{users}</ul>
       </>
     );
   }
