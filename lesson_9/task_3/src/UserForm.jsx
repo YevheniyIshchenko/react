@@ -2,8 +2,7 @@ import React from "react";
 
 class Search extends React.Component {
   handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = [...new FormData(this.formRef)].reduce(
+    return [...new FormData(this.formRef)].reduce(
       (acc, [name, value]) => ({ ...acc, [name]: value }),
       {}
     );
