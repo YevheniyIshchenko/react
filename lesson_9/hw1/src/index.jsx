@@ -15,6 +15,8 @@ const users = [
   { id: 9, name: "Bolo", age: 23 },
 ];
 
+
+
 const rootElement = document.querySelector("#root");
 
 ReactDOM.render(<UsersList users={users} />, rootElement);

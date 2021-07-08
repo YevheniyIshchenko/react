@@ -8,6 +8,7 @@ class UsersList extends React.Component {
     this.state = {
       value: "",
     };
+    // this.handleChange = this.handleChange.bind(this);
   }
   handleChange = (event) => {
     this.setState({
@@ -19,7 +20,7 @@ class UsersList extends React.Component {
     const users = this.props.users
       .filter(
         (user) =>
-          this.state.value !== "" ||
+          // this.state.value !== "" ||
           user.name.toLowerCase().includes(this.state.value.toLowerCase())
       )
       .map((el) => <User key={el.id} name={el.name} age={el.age} />);
@@ -30,12 +31,12 @@ class UsersList extends React.Component {
     //         user.name.toLowerCase().includes(this.state.value.toLowerCase())
     //       )
     //     : users;
-    
+    const count = users.length;
     return (
       <>
         <Filter
           filtertext={this.state.value}
-          count={users.lenght}
+          count={users.length}
           onChange={this.handleChange}
         />
 
