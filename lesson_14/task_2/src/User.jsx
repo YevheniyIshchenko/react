@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 
-const User = ({ match }) => {
+const User = () => {
+  const { userId } = useParams();
   const [userData, setUserData] = useState(null);
   useEffect(() => {
-    fetch(`https://api.github.com/users/${match.params.userId}`)
+    fetch(`https://api.github.com/users/${userId}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -13,7 +15,7 @@ const User = ({ match }) => {
       .then((userData) => {
         setUserData(userData);
       });
-  }, [match.params.userId]);
+  }, [userId]);
   if (!userData) {
     return null;
   }
