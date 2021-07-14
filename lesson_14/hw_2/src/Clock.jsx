@@ -10,8 +10,6 @@ const Clock = ({ location, offset }) => {
         setClock(new Date());
       }, 1000);
     };
-
-    clock();
     return () => {
       clearInterval(clock);
     };
