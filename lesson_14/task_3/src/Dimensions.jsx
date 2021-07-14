@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import { useParams } from "react-router";
 
 const Dimensions = () => {
-  // const { userId } = useParams();
   const [dimensions, setDimensions] = useState({
     width: null,
     height: null,
