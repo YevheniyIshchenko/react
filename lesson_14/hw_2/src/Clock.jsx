@@ -5,11 +5,10 @@ const Clock = ({ location, offset }) => {
   const [clocks, setClock] = useState(new Date());
 
   useEffect(() => {
-    const clock = () => {
-      setInterval(() => {
-        setClock(new Date());
-      }, 1000);
-    };
+    const clock = setInterval(() => {
+      setClock(new Date());
+    }, 1000);
+
     return () => {
       clearInterval(clock);
     };
