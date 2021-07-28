@@ -15,9 +15,9 @@ const Clock = ({ location, offset }) => {
   }, []);
 
   return (
-    <div className="clock">
-      <div className="clock__location">{location}</div>
-      <div className="clock__time">
+    <div className='clock'>
+      <div className='clock__location'>{location}</div>
+      <div className='clock__time'>
         {moment(clocks).utcOffset(offset).format("LTS")}
       </div>
     </div>
